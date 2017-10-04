@@ -9,14 +9,25 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+#Previous windows names
+
 set $mod Mod4
+set $ws1 "1:"
+set $ws2 "2:¶"
+set $ws3 "3:"
+set $ws4 "4:"
+set $ws5 "5:"
+set $ws6 "6:"
+set $ws7 "7:𝄞"
+set $ws8 "8:"
+set $ws9 "9:☑"
+set $ws10 "10:"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Hack-Regular 10
+font pango:Hack-Regular 22
 
-#Wallpaper Can be found at www.nervewax.com
-exec feh --bg-scale ~/Wallpaper/hW8tBdX.png
+exec feh --bg-scale ~/Wallpaper/4k-retro-80s-wallpaper-1920×1080.jpg
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -28,7 +39,7 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -fn 'hack-18'
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -105,81 +116,49 @@ bindsym $mod+i exec ~/scripts/Internetstartup.sh
 
 bindsym $mod+m exec ~/scripts/Entertainmentstartup.sh
 
-# focus the child container
-#bindsym $mod+d focus child
-
-workspace "1 Text-Processing" output DVI-I-1
-workspace "2 Text-Processing" output HDMI-0
-workspace "3 Internet" output  DVI-I-1
-workspace "4 Email/IRC" output HDMI-0
-workspace "5 Terminal" output  DVI-I-1 
-workspace "6 Terminal" output  HDMI-0
-workspace "7 Reading" output  DVI-I-1
-workspace "8 Reading" output HDMI-0
-workspace "9 Goals" output DVI-I-1
-workspace "10 System Monitor" output HDMI-0
-workspace "11 Videos" output DVI-I-1
-workspace "12 Music" output HDMI-0
-workspace "13 VM" output HDMI-0
-workspace "14 Steam" output DVI-I-1
-workspace "15 Torrent" output HDMI-0
-
 # switch to workspace
-bindsym $mod+1 workspace 1 Text-Processing
-bindsym $mod+2 workspace 2 Text-Processing
-bindsym $mod+3 workspace 3 Internet
-bindsym $mod+4 workspace 4 Email/IRC
-bindsym $mod+5 workspace 5 Terminal
-bindsym $mod+6 workspace 6 Terminal
-bindsym $mod+7 workspace 7 Reading
-bindsym $mod+8 workspace 8 Reading
-bindsym $mod+9 workspace 9 Goals
-bindsym $mod+0 workspace 10 System Monitor
-bindsym $mod+F1 workspace 11 Videos
-bindsym $mod+F2 workspace 12 Music
-bindsym $mod+F3 workspace 13 VM
-bindsym $mod+F4 workspace 14 Steam
-bindsym $mod+F5 workspace 15 Torrent
-
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1 Text-Processing
-bindsym $mod+Shift+2 move container to workspace 2 Text-Processing
-bindsym $mod+Shift+3 move container to workspace 3 Internet
-bindsym $mod+Shift+4 move container to workspace 4 Email/IRC
-bindsym $mod+Shift+5 move container to workspace 5 Terminal
-bindsym $mod+Shift+6 move container to workspace 6 Terminal
-bindsym $mod+Shift+7 move container to workspace 7 Reading
-bindsym $mod+Shift+8 move container to workspace 8 Reading
-bindsym $mod+Shift+9 move container to workspace 9 Goals
-bindsym $mod+Shift+0 move container to workspace 10 System Monitor
-bindsym $mod+Shift+F1 move container to workspace 11 Videos
-bindsym $mod+Shift+F2 move container to workspace 12 Music
-bindsym $mod+Shift+F3 move container to workspace 13 VM
-bindsym $mod+Shift+F4 move container to workspace 14 Steam
-bindsym $mod+Shift+F5 move container to workspace 15 Torrent
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 # binding applications to workspace
 
-assign [class="Thunderbird"] 4 Email/IRC
-assign [class="(?i)firefox$"] 3 Internet
-assign [class="(?i)tor"] 3 Internet
-assign [class="^URxvt$" instance="(?i)irssi$"] 3 Internet
-assign [class="(?i)transmission-gtk"] 15 Torrent
-assign [class="(?i)qpdfview"] 7 Reading
-assign [class="^URxvt$" instance="^iftop$"] 10 System Monitor
-assign [class="^URxvt$" instance="^htop$"] 10 System Monitor
-assign [class="^URxvt$" instance="^iotop$"] 10 System Monitor
-assign [class="^URxvt$" instance="mpv"] 11 Videos
-assign [class="^Google-chrome"] 11 Videos
-assign [class="^URxvt$" instance="^moc$"] 12 Music
-assign [class="(?i)QEMU"] 13 VM
-assign [class="Steam"] 14 Steam
+assign [class="Thunderbird"] $ws4
+assign [class="(?i)firefox$"] $ws3
+assign [class="(?i)tor"] $ws3
+assign [class="^URxvt$" instance="(?i)irssi$"] $ws4
+assign [class="(?i)transmission-gtk"] $ws8
+assign [class="(?i)qpdfview"] $ws2
+assign [class="^URxvt$" instance="^iftop$"] $ws10
+assign [class="^URxvt$" instance="^htop$"] $ws10
+assign [class="^URxvt$" instance="^iotop$"] $ws10
+assign [class="^URxvt$" instance="mpv"] $ws6
+assign [class="^Google-chrome"] $ws6
+assign [class="^URxvt$" instance="^moc$"] $ws7 
+assign [class="(?i)QEMU"] $ws8
+assign [class="Steam"] $ws8
 
 # Start Apps
 
 exec xrdb ~/.Xresources
-exec emacs
-exec --no-startup-id i3-msg 'workspace 12 Music; exec urxvt -e mocp; workspace 1 Text-Processing'
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
